@@ -1,0 +1,21 @@
+It's so doc
+
+```scala
+import org.scalajs.dom.window.setInterval
+import scala.scalajs.js.Date
+
+setInterval(() => {
+  node.innerHTML = new Date().toString()
+}, 1000)
+```
+<div id="mdoc-html-run0" data-mdoc-js></div>
+
+```scala
+
+println("2")
+
+```
+<div id="mdoc-html-run1" data-mdoc-js></div>
+<script type="module" src="readme.md.js"></script>
+<script type="module" src="mdoc.js"></script>
+
