@@ -13,15 +13,7 @@ Wow that works.
 
 ```scala mdoc:js
 
-import com.raquo.laminar.shoelace.sl.Icon
-import com.raquo.laminar.api.L.{*, given}
-import org.scalajs.dom
-
-
-val icon = Icon(_.name := "rocket-takeoff")
-node.id = "appContainer"
-
-render(dom.document.querySelector("#appContainer"), icon)
+println("mcargface")
 
 ```
 
