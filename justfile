@@ -1,10 +1,13 @@
-mdocLocalV := "0.0.0+1377-32535440+20240710-1722-SNAPSHOT"
+mdocLocalV := "2.6.1"
+
+mdocSuccess:
+  sbt 'mdoc --watch --import-map-path importmap.json'
 
 mdoc:
-  cs launch org.scalameta:mdoc-js_2.13:2.5.4 --extra-jars $(pwd) -- --watch
+  cs launch org.scalameta:mdoc-js_2.13:2.6.1 --extra-jars $(pwd) -- --watch
 
 mdoc3:
-  cs launch org.scalameta:mdoc-js_3:2.5.4 --extra-jars $(pwd) -- --watch
+  cs launch org.scalameta:mdoc-js_3:2.6.1 --extra-jars $(pwd) -- --watch --import-map-path $(pwd)/importmap.json
 
 mdocLocal:
-  cs launch org.scalameta:mdoc-js_3:{{mdocLocalV}} --extra-jars $(pwd) -- --import-map-path /Users/simon/Code/mdoc_test/importmap.json --watch
+  cs launch org.scalameta:mdoc-js_3:{{mdocLocalV}} --extra-jars $(pwd) -- --import-map-path $(pwd)/importmap.json --watch
