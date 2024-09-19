@@ -1,3 +1,4 @@
+Underneath the code fence, there is a textbox. Shoelace will autoload valid icons. Example are;
 
 - rocket-takeoff
 - heart
@@ -14,19 +15,22 @@ val iconVar = Var("rocket-takeoff")
 
 render(dom.document.querySelector("#appContainer"),
   div(
-    sl.Input.of(
-    _.label("Enter icon name"),
-    _ => width.px(200),
-    _.controlled(
-      _.value <-- iconVar,
-      _.onInput.mapToValue --> iconVar,
-    )
-  ),
-    sl.Icon.of(
-      _.name <-- iconVar
+      cls := "sl-theme-light",
+      sl.Input.of(
+      _.label("Enter icon name"),
+      _ => width.px(200),
+      _.controlled(
+        _.value <-- iconVar,
+        _.onInput.mapToValue --> iconVar,
+      )
+    ),
+      sl.Icon.of(
+        _.name <-- iconVar
 
-  )
-  )
+     )
+
+
+    )
 )
 
 ```
