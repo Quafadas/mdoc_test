@@ -1,4 +1,4 @@
-quickstart sbt
+In an sbt console,
 
 `mdoc --import-map-path importmap.json --property-file-name my.properties`
 
