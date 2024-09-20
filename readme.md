@@ -1,3 +1,14 @@
+Generate a `my.properties` file by runnign this command in a browser. 
+
+```
+cat <<EOT > mdoc.properties
+js-classpath=$(coursier fetch org.scala-js:scalajs-library_2.13:1.16.0 org.scala-js:scalajs-dom_sjs1_3:2.8.0 com.raquo:laminar-shoelace_sjs1_3:0.1.0 com.raquo:laminar_sjs1_3:17.0.0 -p)
+js-scalac-options=-scalajs
+js-linker-classpath=$(coursier fetch org.scalameta:mdoc-js-worker_3:2.6.1 org.scala-js:scalajs-linker_2.13:1.16.0 -p)
+js-module-kind=ESModule
+EOT
+```
+Copy that file to the _resources_ directory of your mdoc project.
 In an sbt console,
 
 `mdoc --import-map-path importmap.json --property-file-name my.properties`
