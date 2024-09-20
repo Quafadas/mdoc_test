@@ -2,7 +2,11 @@ The hardest part is getting mdocs properties file correctly configured and figur
 
 /Users/simon/Code/mdoc_test/myproject-docs/target/scala-3.3.3/resource_managed
 
-There should be an `mdoc.properties`. I would recommend, copying that file to the _resources_ directory of your mdoc project. Rename it "my.properties".
+There should be an `mdoc.properties`. I would recommend, copying that file to the _resources_ directory of your mdoc project. Rename it "my.properties". You may then wish to add other properties, according to mdocs documentation. e.g.
+
+```
+js-html-header=<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.1/cdn/themes/light.css" /><script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.1/cdn/shoelace-autoloader.js"></script>
+```
 
 In an sbt console,
 
