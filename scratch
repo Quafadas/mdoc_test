@@ -7,14 +7,14 @@ EOT
 
 
 cat <<EOT > mdoc.properties
-js-classpath=$(coursier fetch org.scala-js:scalajs-library_2.13:1.16.0 org.scala-js:scalajs-dom_sjs1_3:2.8.0 com.raquo:laminar-shoelace_sjs1_3:0.1.0 com.raquo:laminar_sjs1_3:17.0.0 -p)
+js-classpath=$(coursier fetch org.scala-js:scalajs-library_2.13:1.16.0 org.scala-js:scalajs-dom_sjs1_3:2.8.0 com.raquo:laminar-shoelace_sjs1_3:0.1.0 com.raquo:laminar_sjs1_3:17.0.0 io.github.quafadas::vecxt_sjs1_3:0.0.19 -p)
 js-scalac-options=-scalajs
 js-linker-classpath=$(coursier fetch org.scalameta:mdoc-js-worker_3:2.6.1 org.scala-js:scalajs-linker_2.13:1.16.0 -p)
 js-module-kind=ESModule
 EOT
 
 cat <<EOT > mdoc.properties
-js-classpath=$(coursier fetch org.scala-js:scalajs-library_2.13:1.16.0 org.scala-js:scalajs-dom_sjs1_3:2.8.0 com.raquo:laminar-shoelace_sjs1_3:0.1.0 com.raquo:laminar_sjs1_3:17.0.0 -p)
+js-classpath=$(coursier fetch org.scala-js:scalajs-library_2.13:1.16.0 org.scala-js:scalajs-dom_sjs1_3:2.8.0 com.raquo:laminar-shoelace_sjs1_3:0.1.0 com.raquo:laminar_sjs1_3:17.0.0 io.github.quafadas::vecxt_sjs1_3:0.0.19 -p)
 js-scalac-options=-scalajs
 js-linker-classpath=$(coursier fetch org.scalameta:mdoc-js-worker_3:2.6.1 org.scala-js:scalajs-linker_2.13:1.16.0 com.armanbilge:scalajs-importmap_2.13:0.1.1 -p)
 js-module-kind=ESModule

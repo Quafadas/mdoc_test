@@ -1,19 +1,14 @@
-Generate a `my.properties` file by runnign this command in a browser. 
+The hardest part is getting mdocs properties file correctly configured and figuring out how to maintain it. Look in this path after SBT start.
 
-```
-cat <<EOT > mdoc.properties
-js-classpath=$(coursier fetch org.scala-js:scalajs-library_2.13:1.16.0 org.scala-js:scalajs-dom_sjs1_3:2.8.0 com.raquo:laminar-shoelace_sjs1_3:0.1.0 com.raquo:laminar_sjs1_3:17.0.0 -p)
-js-scalac-options=-scalajs
-js-linker-classpath=$(coursier fetch org.scalameta:mdoc-js-worker_3:2.6.1 org.scala-js:scalajs-linker_2.13:1.16.0 -p)
-js-module-kind=ESModule
-EOT
-```
-Copy that file to the _resources_ directory of your mdoc project.
+/Users/simon/Code/mdoc_test/myproject-docs/target/scala-3.3.3/resource_managed
+
+There should be an `mdoc.properties`. I would recommend, copying that file to the _resources_ directory of your mdoc project. Rename it "my.properties".
+
 In an sbt console,
 
-`mdoc --import-map-path importmap.json --property-file-name my.properties`
+`mdoc --import-map-path importmap.json --property-file-name my.properties`.
 
-If that worked, run this
+This should run mdoc and successfully compile the markdown files. If that worked, run this
 
 `mdoc --watch --import-map-path importmap.json --property-file-name my.properties`
 
@@ -35,4 +30,4 @@ Areas of configuration:
 
 Hint: I _strongly_ recommend checking in some version of the proprties file. You'll always have to generate it for the environment you are running in, but it's so painful to get right, that having a source of correctness available can save significant frustration.
 
-It forms a poor mans package.json and it painful to recreate if lost.
+It forms a poor mans package.json and is painful to recreate if lost.
